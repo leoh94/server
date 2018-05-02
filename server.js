@@ -2,7 +2,6 @@
 var express = require('express');
 var https = require('https');
 var fs = require('fs');
-var fileName = req.params.fileName;
 var app = express();
 var privateKey = fs.readFileSync('/home/studentuser/certs/client-key.pem').toString();
 var certificate = fs.readFileSync('/home/studentuser/certs/client-cert.pem').toString();
@@ -17,6 +16,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/:fileName', function (req, res) {
+	var fileName = req.params.fileName;
 	// run some server-side code
 	console.log(fileName + ' requested');
 	// note that __dirname gives the path to the server.js file

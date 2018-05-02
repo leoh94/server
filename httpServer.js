@@ -1,7 +1,6 @@
 var express = require('express');
 var http = require('http');
 var path = require("path");
-var filename = req.params.fileName;
 var app = express();
 var httpServer = http.createServer(app); //create the server
 var fs = require('fs');
@@ -20,6 +19,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/:fileName', function (req, res) {
+	var filename = req.params.fileName;
 	// run some server-side code
 	console.log(fileName + ' requested');
 	// note that __dirname gives the path to the server.js file
