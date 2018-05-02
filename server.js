@@ -9,9 +9,9 @@ var credentials = {key: privateKey, cert: certificate};
 var httpsServer = https.createServer(credentials, app);
 httpsServer.listen(4443);
 
-app.get('/', function (req, res) {
+app.get('/test.html', function (req, res) {
 	//run some server-side coe
-	console.log('the server has received a request');
-	res.send('Hello World from HTTPS');
+	console.log('test.html requested');
+	res.send(__dirname + '/test.html');
 });
 
