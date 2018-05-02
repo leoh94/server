@@ -17,14 +17,6 @@ app.get('/', function (req, res) {
 	console.log("the server has received a request");
 	res.send('HTTP: You Forgot the Extension!');
 });
-
-app.get('/:fileName', function (req, res) {
-	var filename = req.params.fileName;
-	// run some server-side code
-	console.log(fileName + ' requested');
-	// note that __dirname gives the path to the server.js file
-	res.sendFile(__dirname + '/'+ fileName);
-	});
 	
 app.use(express.static(__dirname));
 
