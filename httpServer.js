@@ -12,9 +12,9 @@ app.use(bodyParser.urlencoded({
 
 httpServer.listen(4480);
 
-app.get('/', function (req, res) {
-	// run some server-side code
-	console.log('the server has received a request'); 
-	res.send('Hello World');
+app.get('/test5.html', function (req, res) {
+	//run some server-side coe
+	console.log('test5.html requested');
+	res.send(__dirname + '/test5.html');
 });
 
