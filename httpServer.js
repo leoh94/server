@@ -14,9 +14,9 @@ app.use(bodyParser.urlencoded({
 httpServer.listen(4480);
 
 app.get('/', function (req, res) {
-// run some server-side code
-console.log(‘the server has received a request’);
-res.send('HTTP: You Forgot the Extension!');
+	// run some server-side code
+	console.log("the server has received a request");
+	res.send('HTTP: You Forgot the Extension!');
 });
 
 app.get('/:fileName', function (req, res) {
