@@ -35,7 +35,7 @@ pool.connect(function(err,client,done) {
 		console.log("not able to get connection "+ err);
 		res.status(400).send(err);
 	}
-	client.query('SELECT name FROM united_kingdom_counties',function(err,result) {
+	client.query('SELECT name FROM uk_counties_subset',function(err,result) {
 		done();
 		if(err){
 			console.log(err);
