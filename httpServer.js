@@ -20,15 +20,6 @@ for (var i = 0; i < configarray.length; i++) {
 }
 var pg = require('pg');
 var pool = new pg.Pool(config);
-
-httpServer.listen(4480);
-
-app.get('/', function (req, res) {
-	// run some server-side code
-	console.log("the server has received a request");
-	res.send('HTTP: You Forgot the Extension!');
-});
-
 app.get('postgistest', function (req,res) {
 pool.connect(function(err,client,done) {
 	if(err){
@@ -45,6 +36,15 @@ pool.connect(function(err,client,done) {
 		});
 	});
 });
+
+httpServer.listen(4480);
+
+app.get('/', function (req, res) {
+	// run some server-side code
+	console.log("the server has received a request");
+	res.send('HTTP: You Forgot the Extension!');
+});
+
 	
 app.use(express.static(__dirname));
 
