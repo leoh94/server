@@ -30,10 +30,10 @@ app.get('/', function (req, res) {
 });
 
 app.get('postgistest', function (req,res) {
-pool.connect(function(client,done) {
-	client.query('SELECT name FROM uk_counties_subset',function(result) {
-	done();
-	res.status(200).send(result.rows);
+	pool.connect(function(client,done) {
+		client.query('SELECT name FROM uk_counties_subset',function(result) {
+			done();
+			res.status(200).send(result.rows);
 });
 });
 });
