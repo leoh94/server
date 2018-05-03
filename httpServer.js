@@ -30,14 +30,21 @@ app.get('/', function (req, res) {
 });
 
 app.get('postgistest', function (req,res) {
-	pool.connect(function(client,done) {
-		client.query('SELECT name FROM uk_counties_subset',function(result) {
+	pool.connect(function(err,client,done) {
+		if(err){
+			console.log("not able to get connection "+ err);
+			res.status(400).send(err);
+		}
+		client.query('SELECT name FROM united_kingdom_counties',function(err,result) {
 			done();
+			if(err){
+				console.log(err);
+				res.status(400).send(err);
+			}
 			res.status(200).send(result.rows);
+		});
+	});
 });
-});
-});
-
 	
 app.use(express.static(__dirname));
 
