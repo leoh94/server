@@ -26,15 +26,15 @@ pool.connect(function(err,client,done) {
 		console.log("not able to get connection "+ err);
 		res.status(400).send(err);
 	}
-	client.query('SELECT name FROM uk_counties_subset',function(err,result) {
-		done();
-		if(err){
-			console.log(err);
-			res.status(400).send(err);
+client.query('SELECT name FROM uk_counties_subset',function(result) {
+	done();
+	if(err){
+		console.log(err);
+		res.status(400).send(err);
 		}
-		res.status(200).send(result.rows);
-		});
-	});
+	res.status(200).send(result.rows);
+});
+});
 });
 
 httpServer.listen(4480);
