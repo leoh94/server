@@ -9,7 +9,7 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({
 	extended: true
 }));
-
+app.use(bodyParser.json());
 // adding functionality to allow cross-domain queries when PhoneGap is running a server
 app.use(function(req, res, next) {
 	res.setHeader("Access-Control-Allow-Origin", "*");
@@ -145,6 +145,13 @@ app.get('/postgistest', function (req,res) {
 	});
 });
 
+app.post('/uploadData',function(req,res){
+	// note that we are using POST here as we are uploading data
+	// so the parameters form part of the BODY of the request rather than the RESTful API
+	console.dir(req.body);
+	// for now, just echo the request back to the client
+	res.send(req.body);
+});
 
 // the / indicates the path that you type into the server - in this case, what happens when you type in:  http://developer.cege.ucl.ac.uk:32560/xxxxx/xxxxx
 app.get('/:name1', function (req, res) {
