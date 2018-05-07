@@ -57,7 +57,7 @@ app.get('/getPOI', function (req,res) {
 		var querystring = " SELECT 'FeatureCollection' As type, array_to_json(array_agg(f)) As features FROM ";
 		querystring = querystring + "(SELECT 'Feature' As type , ST_AsGeoJSON(lg.geom)::json As geometry, ";
 		querystring = querystring + "row_to_json((SELECT l FROM (SELECT id, name, category) As l )) As properties";
-		querystring = querystring + " FROM uk_poi_subset As lg limit 100 ) As f ";
+		querystring = querystring + " FROM appdata As lg limit 100 ) As f ";
 		console.log(querystring);
 		client.query(querystring,function(err,result){
 			//call `done()` to release the client back to the pool
@@ -159,9 +159,9 @@ app.post('/uploadData',function(req,res){
 		// well known text should look like: 'POINT(-71.064544 42.28787)'
 		var geometrystring = "st_geomfromtext('POINT(" + req.body.longitude + " " + req.body.latitude + ")'";
 		
-		var querystring = "INSERT into formdata (name,surname,module,question, answer1, answer2, answer3, answer4, geom) values ('";
-		querystring = querystring + req.body.name + "','" + req.body.surname + "','" + req.body.module + "','";
-		querystring = querystring + req.body.question + "','" + req.body.answer1 + "','" + req.body.answer2 + "','" + req.body.answer3 + "','" + req.body.answer4+"',"+geometrystring + "))";
+		var querystring = "INSERT into appdata (site_location,question,answer1,answer2, answer3, answer4, correct, geom) values ('";
+		querystring = querystring + req.body.site_location + "','" + req.body.question + "','" + req.body.answer1 + "','";
+		querystring = querystring + req.body.answer2 + "','" + req.body.answer3 + "','" + req.body.answer4 + "','" + req.body.correct +"',"+geometrystring + "))";
 		console.log(querystring);
 		client.query( querystring,function(err,result) {
 		done();
@@ -169,7 +169,7 @@ app.post('/uploadData',function(req,res){
 			console.log(err);
 			res.status(400).send(err);
 		}
-		res.status(200).send("row inserted");
+		res.status(200).send("Question Uploaded Successfully");
 		});
 	});
 });
