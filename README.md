@@ -18,10 +18,21 @@ The server repository contains the necessary server-side code to allow the proce
 <li>To run the Phonegap Server, navigate to any phonegap app directory, inside the ucXXXXX folder and type: "phonegap serve"</li>
 <li>To stop the phonegap server, press Ctrl+C.</li>
 </ul></p>
-                                                        
 
+<h3> Technical Information </h3>
+<p style="font-family:calibri;font-size:150%;">
+The following port numbers are assigned to each server:
+<ul>
+          <li>HTTP: 30263</li>
+          <li>HTTPS: 31063</li>
+          <li>Phonegap: 31263</li>
+</ul>
+These ports should be placed after the host address within the URL (developer.cege.ucl.ac.uk:XXXXX/).
+</p>   
+                                                        
 <h2> Web Application: Question Setter </h2>
 <p style="font-family:calibri;font-size:150%;"> The questionSetter compnent is targeted for use in a web browser, accessible to the administrators of the system. </p>
+
 <h3> Installation Guide </h3>
 <p style="font-family:calibri; font-size:150%;">
 <ul>
@@ -42,9 +53,10 @@ This app was tested on the following browsers:
 
 <h2>Mobile Application: Quiz Mapper </h2>
 <p style="font-family:calibri;font-size:150%;">The quizMapper component is targeted for use on an android mobile device, accessible to everyone that can connect to the UCL VPN network. This app is the client-side component and executes the location-based quiz.</p>
-          <h3> Installation Guide </h3>
-          <p style="font-family:calibri;font-size:150%;>
-          <ul>
+
+<h3> Installation Guide </h3>
+<p style="font-family:calibri;font-size:150%;>
+<ul>
             <li>Install this repository via terminal: git clone https://github.com/leoh94/quizMapper.git </li>
             <li>Install the server via terminal: git clone https:github.com/leoh94/server.git </li>
             <li>Go to https://build.phonegap.com/apps to create the mobile app.</li>
