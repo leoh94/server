@@ -2,7 +2,7 @@
 <p style="font-family:calibri;font-size:150%;> The server, quizMapper & questionSetter repositories together collaborate to create a location-based quiz with system architectural functionality provided through servers and postGreSQL databases. This document is to be used as a technical guide for the 3 components that make this system. </p>
 
 <h2> Web Application: Question Setter </h2>
-<p style="font-family:calibri;font-size:150%;> The questionSetter compnent is targeted for use in a web browser, accessible to the administrators of the system. </p>
+<p style="font-family:calibri;font-size:150%;"> The questionSetter compnent is targeted for use in a web browser, accessible to the administrators of the system. </p>
 <h3> Installation Guide </h3>
 <p style="font-family:calibri; font-size:150%;">
 <ul>
@@ -22,7 +22,7 @@ This app was tested on the following browsers:
           </ul></p>
 
 <h2>Mobile Application: Quiz Mapper </h2>
-<p style="font-family:calibri;font-size:150%;>The quizMapper component is targeted for use on an android mobile device, accessible to everyone that can connect to the UCL VPN network. This app is the client-side component and executes the location-based quiz.</p>
+<p style="font-family:calibri;font-size:150%;">The quizMapper component is targeted for use on an android mobile device, accessible to everyone that can connect to the UCL VPN network. This app is the client-side component and executes the location-based quiz.</p>
           <h3> Installation Guide </h3>
           <p style="font-family:calibri;font-size:150%;>
           <ul>
