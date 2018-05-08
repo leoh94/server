@@ -1,7 +1,6 @@
 <h1>Technical Guide Document for Project Components</h1>
 <p style="font-family:calibri;font-size:150%;> The server, quizMapper & questionSetter repositories together collaborate to create a location-based quiz with system architectural functionality provided through servers and postGreSQL databases. This document is to be used as a technical guide for the 3 components that make this system. </p>
-
-<h2> NodeJS Server: Server </h2>
+          <h2> NodeJS Server: Server </h2>
 <p style="font-family:calibri;font-size:150%;"> 
 The server repository contains the necessary server-side code to allow the processing, upload/download and storage of data between both the wep and mobile applications and postGreSQL databases (to store spatial data). A HTTPS server file is provided in the repository however, due to lacks in certification and security, Microsoft Edge does not allow the HTTPS server to carry out location-based functions. Therefore the HTTP server file is used for both applications. The HTTP code contains GET and POST commands that retrieve or send data from the applications. </p>
 
