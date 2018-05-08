@@ -52,7 +52,6 @@ app.get('/getPOI', function (req,res) {
 		// use the inbuilt geoJSON functionality
 		// and create the required geoJSON format using a query adapted from here: 
 		//http://www.postgresonline.com/journal/archives/267-Creating-GeoJSON-FeatureCollections-with-JSON-and-PostGIS-functions.html,accessed 4th January 2018
-		// note that query needs to be a single string with no line breaks so build it up bit by bit
 		
 		var querystring = " SELECT 'FeatureCollection' As type, array_to_json(array_agg(f)) As features FROM ";
 		querystring = querystring + "(SELECT 'Feature' As type , ST_AsGeoJSON(lg.geom)::json As geometry, ";
@@ -72,20 +71,17 @@ app.get('/getPOI', function (req,res) {
 });
 
 app.get('/getData', function (req,res) {
+	//use GET to call database to download JSON for map display in both apps.
      pool.connect(function(err,client,done) {
       	if(err){
           	console.log("not able to get connection "+ err);
            	res.status(400).send(err);
        	}
-        	// now use the inbuilt geoJSON functionality
-        	// and create the required geoJSON format using a query adapted from here:  
-        	// http://www.postgresonline.com/journal/archives/267-Creating-GeoJSON-Feature-Collections-with-JSON-and-PostGIS-functions.html, accessed 4th January 2018
-        	// note that query needs to be a single string with no line breaks so built it up bit by bit
 
         	var querystring = " SELECT 'FeatureCollection' As type, array_to_json(array_agg(f)) As features  FROM ";
         	querystring = querystring + "(SELECT 'Feature' As type     , ST_AsGeoJSON(lg.geom)::json As geometry, ";
-        	querystring = querystring + "row_to_json((SELECT l FROM (SELECT site_location, question, answer1,answer2,answer3,answer4,correct) as l)) As properties";
-        	querystring = querystring + "   FROM appdata ) As f ";
+        	querystring = querystring + "row_to_json((SELECT l FROM (SELECT site_location, question, answer1,answer2,answer3,answer4,correct) As l  )) As properties";
+        	querystring = querystring + "   FROM appdata As lg limit 500 ) As f ";
         	console.log(querystring);
 
         	// run the second query
@@ -102,28 +98,8 @@ app.get('/getData', function (req,res) {
 });
 
 
-app.get('/postgistest', function (req,res) {
-	console.log('postgistest');
-	pool.connect(function(err,client,done) {
-		if(err){
-			console.log("not able to get connection "+ err);
-			res.status(400).send(err);
-		} 
-		client.query('SELECT name FROM uk_counties_subset' ,function(err,result) {
-			console.log("query");
-			done(); 
-			if(err){
-				console.log(err);
-				res.status(400).send(err);
-			}
-			res.status(200).send(result.rows);
-		});
-	});
-});
-
 app.post('/uploadData',function(req,res){
-	// note that we are using POST here as we are uploading data
-	// so the parameters form part of the BODY of the request rather than the RESTful API
+	// use POST to upload Admin input from questionSetter to appData database.
 	console.dir(req.body);
 	pool.connect(function(err,client,done) {
 		if(err){
@@ -131,8 +107,6 @@ app.post('/uploadData',function(req,res){
 			res.status(400).send(err);
 		}
 		// pull the geometry component together
-		// note that well known text requires the points as longitude/latitude !
-		// well known text should look like: 'POINT(-71.064544 42.28787)'
 		var geometrystring = "st_geomfromtext('POINT(" + req.body.longitude + " " + req.body.latitude + ")'";
 		
 		var querystring = "INSERT into appdata (site_location,question,answer1,answer2, answer3, answer4, correct, geom) values ('";
@@ -151,6 +125,7 @@ app.post('/uploadData',function(req,res){
 });
 
 app.post('/uploadAnswer', function(req,res){
+	//use POST to upload user input from QuizMapper to appAnswer database.
 	console.dir(req.body);
 	pool.connect(function(err,client,done) {
 		if(err){
