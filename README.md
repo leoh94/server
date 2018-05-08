@@ -3,21 +3,21 @@
 
 <h2> NodeJS Server: Server </h2>
 <p style="font-family:calibri;font-size:150%;"> 
-The server repository contains the necessary server-side code to allow the processing, upload/download and storage of data between both the wep and mobile applications and postGreSQL databases (to store spatial data). A HTTPS server file is provided in the repository however, due to lacks in certification and security, Microsoft Edge does not allow the HTTPS server to carry out location-based functions. Therefore the HTTP server file is used for both applications. The HTTP code contains GET and POST commands that retrieve or send data from the applications. 
-</p>
+The server repository contains the necessary server-side code to allow the processing, upload/download and storage of data between both the wep and mobile applications and postGreSQL databases (to store spatial data). A HTTPS server file is provided in the repository however, due to lacks in certification and security, Microsoft Edge does not allow the HTTPS server to carry out location-based functions. Therefore the HTTP server file is used for both applications. The HTTP code contains GET and POST commands that retrieve or send data from the applications. </p>
 
-<h3> Installation Guide </h3>
-<p style="font-family:calibri;font-size:150%;">
-<ul>
-<li>Install this repository via terminal: git clone https://github.com/leoh94/server.git </li>
-<li>Navigate to the server directory via terminal: "~/code/server"</li>
-<li>To run the server, type: "node httpServer.js". To run server in background add ' &' after file name.</li>
-<li>To run the HTTP server, type: "node server.js". To run server in background add ' &' after file name.</li>
-<li>To stop running the servers, type: "fg 1"* followed by "Ctrl+C". 
+          <h3> Installation Guide </h3>
+          <p style="font-family:calibri;font-size:150%;">
+          <ul>
+          <li>Install this repository via terminal: git clone https://github.com/leoh94/server.git </li>
+          <li>Navigate to the server directory via terminal: "~/code/server"</li>
+          <li>To run the server, type: "node httpServer.js". To run server in background add ' &' after file name.</li>
+          <li>To run the HTTP server, type: "node server.js". To run server in background add ' &' after file name.</li>
+          <li>To stop running the servers, type: "fg 1"* followed by "Ctrl+C". 
           <ul><li>*The number after 'fg' is dependent on the number returned inside [] when the server is first ran.</li></ul>
-<li>To run the Phonegap Server, navigate to any phonegap app directory, inside the ucXXXXX folder and type: "phonegap serve"</li>
-<li>To stop the phonegap server, press Ctrl+C.</li>
-</ul></p>
+          <li>To run the Phonegap Server, navigate to any phonegap app directory, inside the ucXXXXX folder and type: "phonegap serve
+          </li>
+          <li>To stop the phonegap server, press Ctrl+C.</li>
+          </ul></p>
 
 <h3> Technical Information </h3>
 <p style="font-family:calibri;font-size:150%;">
