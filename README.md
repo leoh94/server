@@ -1,5 +1,5 @@
 <h1>Technical Guide Document for Project Components</h1>
-<p style="font-family:calibri;font-size:150%;> The server, quizMapper & questionSetter repositories together collaborate to create a location-based quiz with system architectural functionality provided through servers and postGreSQL databases. This document is to be used as a technical guide for the 3 components that make this system. <p>
+<p style="font-family:calibri;font-size:150%;> The server, quizMapper & questionSetter repositories together collaborate to create a location-based quiz with system architectural functionality provided through servers and postGreSQL databases. This document is to be used as a technical guide for the 3 components that make this system. </p>
 
 <h2> Web Application: Question Setter </h2>
 <p style="font-family:calibri;font-size:150%;> The questionSetter compnent is targeted for use in a web browser, accessible to the administrators of the system. </p>
