@@ -38,7 +38,14 @@ This app was tested on the following browsers:
 </ul>
 </p>
 <h3> Technical Information </h3>
-
+<p style="font-family:calibri; font-size:150%;"> 
+This app was tested on the following browsers:
+          <ul>
+          <li>Google Chrome v66.0.3359.139 (Official Build) (64-bit)</li>
+          <li>Microsoft Edge v41.16299.371.0</li>
+          </ul>
+And the following mobile operating system:
+          Android Marshmallow 6.0.1</p>
 
             
           
