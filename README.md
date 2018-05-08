@@ -5,7 +5,7 @@
 <p style="font-family:calibri;font-size:150%;"> 
 The server repository contains the necessary server-side code to allow the processing, upload/download and storage of data between both the wep and mobile applications and postGreSQL databases (to store spatial data). A HTTPS server file is provided in the repository however, due to lacks in certification and security, Microsoft Edge does not allow the HTTPS server to carry out location-based functions. Therefore the HTTP server file is used for both applications. The HTTP code contains GET and POST commands that retrieve or send data from the applications. </p>
 
-          <h3> Installation Guide </h3>
+<h3> Installation Guide </h3>
           <p style="font-family:calibri;font-size:150%;">
           <ul>
           <li>Install this repository via terminal: git clone https://github.com/leoh94/server.git </li>
