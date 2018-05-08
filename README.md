@@ -4,7 +4,7 @@
 <h2> Web Application: Question Setter </h2>
 <p style="font-family:calibri;font-size:150%;> The questionSetter compnent is targeted for use in a web browser, accessible to the administrators of the system. </p>
 <h3> Installation Guide </h3>
-<p style="font-family:calibri;font-size:150%;>
+<p style="font-family:calibri; font-size:150%;">
 <ul>
 <li>Install this repository via terminal: git clone https://github.com/leoh94/questionSetter.git </li>
 <li>Install the server via terminal: git clone https://github.com/leoh94/server.git </li>
@@ -14,7 +14,7 @@
 <li>The user guide for this app is provided at: http://developer.cege.ucl.ac.uk:31263/userGuide.html </li></ul></p>
 
 <h3> Technical Information </h3>
-<p style="font-family:calibri;font-size:150%;> 
+<p style="font-family:calibri; font-size:150%;"> 
 This app was tested on the following browsers:
           <ul>
           <li>Google Chrome v66.0.3359.139 (Official Build) (64-bit)</li>
@@ -22,10 +22,13 @@ This app was tested on the following browsers:
           </ul></p>
 
 <h2>Mobile Application: Quiz Mapper </h2>
-<p style="font-family:calibri;font-size:150%;> The quizMapper component is targeted for use on an android mobile device, accessible to everyone that can connect to the UCL VPN network. This app is the client-side component and executes the location-based quiz. </p>
+<p style="font-family:calibri;font-size:150%;>
+          The quizMapper component is targeted for use on an android mobile device, accessible to everyone that can connect to the UCL
+          VPN network. This app is the client-side component and executes the location-based quiz. </p>
           <h3> Installation Guide </h3>
           <p style="font-family:calibri;font-size:150%;>
-          <ul><li>Install this repository via terminal: git clone https://github.com/leoh94/quizMapper.git </li>
+          <ul>
+            <li>Install this repository via terminal: git clone https://github.com/leoh94/quizMapper.git </li>
             <li>Install the server via terminal: git clone https:github.com/leoh94/server.git </li>
             <li>Go to https://build.phonegap.com/apps to create the mobile app.</li>
             <li>Copy and paste the quizMapper repository and create a public application.</li>
@@ -34,7 +37,8 @@ This app was tested on the following browsers:
             <li>Run the HTTP server via terminal: "~/code/server" and enter "node httpServer.js &"</li>
             <li>Navigate to the quizMapper directory and run phonegap server: "~/code/quizMapper/uceshus" and enter "phonegap serve"</li>
             <li>Open the app on your device. User guide is provided at: http://developer.cege.ucl.ac.uk:31263/userGuide.html </li>
-</ul></p>
+</ul>
+</p>
 
             
           
