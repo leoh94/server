@@ -85,7 +85,7 @@ app.get('/getData', function (req,res) {
         	var querystring = " SELECT 'FeatureCollection' As type, array_to_json(array_agg(f)) As features  FROM ";
         	querystring = querystring + "(SELECT 'Feature' As type     , ST_AsGeoJSON(lg.geom)::json As geometry, ";
         	querystring = querystring + "row_to_json((SELECT l FROM (SELECT site_location, question, answer1,answer2,answer3,answer4,correct) As l      )) As properties";
-        	querystring = querystring + "   FROM appdata  As lg limit 100  ) As f ";
+        	querystring = querystring + "   FROM appdata ) As f ";
         	console.log(querystring);
 
         	// run the second query
@@ -158,7 +158,7 @@ app.post('/uploadAnswer', function(req,res){
 			res.status(400).send(err);
 		}
 		var querystring = "INSERT into appanswer (question,answer,correct) values ('";
-		querystring = querystring + req.body.question + "','" + req.body.answer + "','" + req.body.correct+ "')";
+		querystring = querystring + req.body.question + "','" + req.body.answer + "','" + req.body.cAnswer+ "')";
 		console.log(querystring);
 		client.query(querystring,function(err,result) {
 			done();
