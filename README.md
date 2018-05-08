@@ -22,9 +22,7 @@ This app was tested on the following browsers:
           </ul></p>
 
 <h2>Mobile Application: Quiz Mapper </h2>
-<p style="font-family:calibri;font-size:150%;>
-          The quizMapper component is targeted for use on an android mobile device, accessible to everyone that can connect to the UCL
-          VPN network. This app is the client-side component and executes the location-based quiz. </p>
+<p style="font-family:calibri;font-size:150%;>The quizMapper component is targeted for use on an android mobile device, accessible to everyone that can connect to the UCL VPN network. This app is the client-side component and executes the location-based quiz.</p>
 <h3> Installation Guide </h3>
           <p style="font-family:calibri;font-size:150%;>
           <ul>
