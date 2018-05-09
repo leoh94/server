@@ -1,6 +1,8 @@
 // express is the server that forms part of the nodejs program
+//Adapted from: https://github.com/claieellul/cegeg077-week5server.git
 var express = require('express');
 var https = require('https');
+var path = require('path')
 var fs = require('fs');
 var app = express();
 app.use(function(req, res, next) {
