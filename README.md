@@ -7,7 +7,7 @@
 <h2> NodeJS Server: Server </h2>
           <p style="font-family:calibri;font-size:150%;"> 
                                                         The server repository contains the necessary server-side code to allow the
-                                                        processing, upload/download and storage of data between both the wep and mobile
+                                                        processing, upload/download and storage of data between both the web and mobile
                                                         applications and postGreSQL databases (to store spatial data). A HTTPS server
                                                         file is provided in the repository however, due to lacks in certification and
                                                         security, Microsoft Edge does not allow the HTTPS server to carry out location-
